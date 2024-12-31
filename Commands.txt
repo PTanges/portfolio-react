@@ -1,0 +1,16 @@
+>> Date Created: 2024-12-30
+>> Last Updated: 2024-12-30
+
+== << Commands >> ==
+- Download & Install Node.js
+
+- Allow for scripts to be ran on system (Powershell)
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+Set-ExecutionPolicy RemoteSigned           
+Get-ExecutionPolicy -List
+
+- Create React App
+npx create-react-app app-name
+
+- Update npm
+npm install -g npm@11.0.0
