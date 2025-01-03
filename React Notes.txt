@@ -47,3 +47,78 @@ Since class is a reserved word in JS, you must use className
 >> React Rules: Logical Operators in React
 React supports if statements OUTSIDE of JSX.
 You may use ternary expressions within the {} such as ?, otherwise not.
+
+>> React Rules: Components
+Components are similar to JS functions, working in isolation and return HTML.
+- Either class or function component
+- Generally recommended to use function component + hooks
+
+    - Example 07 (Class Component in React):
+        class Car extends React.Component {
+            render() {
+                return <h2>The car goes BEEP BEEP!</h2>;
+            }
+        }
+
+    - Example 08 (Function Component in React):
+        function Car() {
+            return <h2>The car goes VROOM VROOM!</h2>;
+        }
+
+    - Example 09 (Passing Args to F!Component in React):
+        root.render(<App colour="red"/>); // Component rendering
+
+Components may be within other components.
+Components may be given arguments (props/properties).
+    - Example 10 (Nested Components with props):
+        function Car(props) {
+        return <h2>I am a { props.brand }!</h2>;
+        }
+
+        function Garage() {
+        return (
+            <>
+            <h1>Who lives in my garage?</h1>
+            <Car brand="Ford" />
+            </>
+        );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<Garage />);
+
+    - Example 11 (Alternate Example):
+        function Car(props) {
+            return <h2>I am a { props.brand }!</h2>;
+        }
+
+        function Garage() {
+            const carName = "Ford";
+
+            return (
+                <>
+                <h1>Who lives in my garage?</h1>
+                <Car brand={ carName } />
+                </>
+            );
+        }
+
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<Garage />);
+
+    - Example 12 (Proper use of props):
+        function Person(props) {
+            return <h2>My name is { props.firstname }!</h2>;
+        }
+
+    - Example 12 (Wrong use of props):
+        // will not work. I presume it's because prop is an object and you need to access the properties with the . operator
+        function Person(firstname) {
+            return <h2>My name is { firstname }!</h2>;
+        }
+
+>> React Rules: Syntax cont.
+Events use camelCase. Event handlers are in {}
+    - Example 13 (Event / Event Handler):
+        onClick instead of onclick.
+        onClick={shoot}  instead of onclick="shoot()".
