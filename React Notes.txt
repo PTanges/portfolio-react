@@ -1,0 +1,49 @@
+== << React Notes >> ==
+React allows for JSX to write HTML elements in JS,
+and place them in the DOM without createElement or appendChild()
+
+>> React Rules: JSX
+JSX converts HTML tags into React elements
+
+    - Example 01 (JSX):
+        const element_name = <h1>My name is JSX!</h1>;
+
+    - Example 02 (No JSX):
+        const element_name = React.createElement('h1', {}, 'I do not use JSX!');
+
+Multi-line HTML (Large HTML Blocks) can be done within parentheses
+The HTML code must be wrapped under ONE top level element,
+so multiple paragraphs must be encapsulated within a div
+- Be sure to close elements with />
+
+    - Example 04 (Large HTML Block within JSX):
+        const element_name = (
+            <ul>
+                <li>Apple</li>
+                <li>Banana</li>
+                <li>Cherry</li>
+            </ul>
+        );
+
+    - Example 05 (Multiple HTML Blocks within JSX):
+        const element_name = (
+            <div>
+                <p>Paragraph 1!</p>
+                <p>Paragraph 2!</p>
+            </div>
+        );
+
+>> React Rules: Expressions
+Expressions can be done within the {} similar to Python
+    - Example 03 (Expression within JSX):
+        const element_name = <h1>{5 + 3} is more than {5 - 3}</h1>;
+
+
+>> React Rules: Classes in JSX
+Since class is a reserved word in JS, you must use className
+    - Example 06 (Classes in JSX):
+        const element_name = <h1 className="header"> Hello World! </h1>;
+
+>> React Rules: Logical Operators in React
+React supports if statements OUTSIDE of JSX.
+You may use ternary expressions within the {} such as ?, otherwise not.
